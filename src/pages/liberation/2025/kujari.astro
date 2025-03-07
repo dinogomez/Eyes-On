@@ -1,0 +1,56 @@
+---
+import { Gallery } from "../../../components/Gallery";
+import { images } from "../../../data/2025/lib/images";
+import Layout from "../../../layouts/Layout.astro";
+import { optimizeImages } from "../../../utils/imageOptimizer";
+// Optimize images at build time
+const optimizedImages = await optimizeImages(images);
+---
+<Layout title="Eyes On - Kujari Liberation">
+    <!-- Gallery Section -->
+    <section class="pb-16 pt-6">
+      <h2 class="font-cheltenham text-4xl font-bold mb-4 text-center uppercase">
+        Godfather Company deploys to Kujari
+      </h2>
+      <p
+        class="font-imperial text-lg text-gray-600 mx-auto mb-12 text-justify"
+      >
+      The PJSF has recently deployed troops to Kujari, a conflict zone near the eastern borders of the Middle Kingdom, where ongoing fighting has led to the exploitation of resources by hostile forces. Their mission aims to counteract growing Chinese influence in the region, which has become a battle for control over critical resources and strategic territory. By securing key locations and supporting local allies, the PJSF seeks to protect the local population, prevent the consolidation of hostile power, and reestablish stability to ensure the region does not fall further under foreign control.
+      </p>
+
+      <Gallery client:load images={optimizedImages} />
+    </section>
+</Layout>
+
+<style>
+  /* Add smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add custom styles for the gallery hover effects */
+  .aspect-w-3 {
+    position: relative;
+    padding-bottom: 66.666667%;
+  }
+
+  .aspect-h-2 {
+    position: relative;
+  }
+
+  .aspect-w-3 img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  /* Add hover effect for gallery items */
+  .group:hover img {
+    transform: scale(1.05);
+  }
+</style> 

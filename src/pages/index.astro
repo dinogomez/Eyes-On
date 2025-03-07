@@ -1,0 +1,39 @@
+---
+import Kujari from "./liberation/2025/kujari.astro";
+---
+
+<!-- Latest News -->
+<Kujari />
+
+<style>
+  /* Add smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add custom styles for the gallery hover effects */
+  .aspect-w-3 {
+    position: relative;
+    padding-bottom: 66.666667%;
+  }
+
+  .aspect-h-2 {
+    position: relative;
+  }
+
+  .aspect-w-3 img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  /* Add hover effect for gallery items */
+  .group:hover img {
+    transform: scale(1.05);
+  }
+</style>

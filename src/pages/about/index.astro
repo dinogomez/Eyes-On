@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import { Gallery } from "../../components/Gallery";
+import { images } from "../../data/2025/about/images";
+import Layout from "../../layouts/Layout.astro";
+import { optimizeImages } from "../../utils/imageOptimizer";
+
+const optimizedImages = await optimizeImages(images);
+---
+<Layout title="Eyes On - About">
+    <section class="pb-16 pt-6 flex">
+      <div class="">
+       
+        <Image src="/images/about/about.webp" width={150} height={150} alt="About Image" class="mr-4 float-left rounded-md" />
+        <h2 class="font-cheltenham text-3xl text-zinc-900 font-bold mb-1  uppercase">
+          About
+        </h2>
+        <p
+          class="font-franklin text-lg text-zinc-600 mx-auto mb-12 text-justify"
+        >
+        <span class="">Eyes On</span> is a passion project created by <a href="https://github.com/dinogomez" target="_blank" class="hover:underline text-zinc-800 font-bold">Dino</a>. This gallery showcases a collection of images and videos highlighting the operations of the <a href="https://www.arma-ph.net/" target="_blank" class="hover:underline text-zinc-800 font-bold">Philippine Joint Special Forces</a>. It serves as a tribute to the operators who dedicate their time and effort to serving in this elite unit. The project not only features stunning photographs from various operations but also provides insightful information about their missions and achievements. Shots are taken from field media operators.
+        </p>
+
+        <Gallery client:load images={optimizedImages} client:idle />
+
+      </div>
+     
+    </section>
+</Layout>
+
+<style>
+  /* Add smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add custom styles for the gallery hover effects */
+  .aspect-w-3 {
+    position: relative;
+    padding-bottom: 66.666667%;
+  }
+
+  .aspect-h-2 {
+    position: relative;
+  }
+
+  .aspect-w-3 img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  /* Add hover effect for gallery items */
+  .group:hover img {
+    transform: scale(1.05);
+  }
+</style> 

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* NYT Style Fonts */
+@font-face {
+  font-family: 'Chomsky';
+  src: url('/fonts/Chomsky.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Cheltenham */
+@font-face {
+  font-family: 'Cheltenham';
+  src: url('/fonts/cheltenham/cheltenham-normal-400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cheltenham';
+  src: url('/fonts/cheltenham/cheltenham-normal-700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Franklin */
+@font-face {
+  font-family: 'Franklin';
+  src: url('/fonts/franklin/franklin-normal-500.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Franklin';
+  src: url('/fonts/franklin/franklin-normal-700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Imperial */
+@font-face {
+  font-family: 'Imperial';
+  src: url('/fonts/imperial/imperial-normal-500.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Imperial';
+  src: url('/fonts/imperial/imperial-normal-700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Base Typography */
+:root {
+  --font-chomsky: 'Chomsky', serif;
+  --font-cheltenham: 'Cheltenham', serif;
+  --font-franklin: 'Franklin', sans-serif;
+  --font-imperial: 'Imperial', serif;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cheltenham);
+}
+
+body {
+  font-family: var(--font-imperial);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navigation and UI elements */
+nav, button, input, select {
+  font-family: var(--font-franklin);
+}
+
+/* Utility Classes */
+.font-chomsky {
+  font-family: var(--font-chomsky);
+}
+
+.font-cheltenham {
+  font-family: var(--font-cheltenham);
+}
+
+.font-franklin {
+  font-family: var(--font-franklin);
+}
+
+.font-imperial {
+  font-family: var(--font-imperial);
+}

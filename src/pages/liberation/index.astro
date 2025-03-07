@@ -1,0 +1,61 @@
+---
+import GallerySection from "../../components/GallerySection.astro";
+import { liberationArticles } from "../../data/2025/lib/liberation";
+import type { Article } from "../../data/article";
+import Layout from "../../layouts/Layout.astro";
+import { optimizeImages } from "../../utils/imageOptimizer";
+
+const lib = liberationArticles.map((data: Article) => ({
+  id: data.id,
+  src: data.thumbnail_src,
+  alt: data.thumbnail_alt,
+  title: data.title,
+  description: data.description,
+  location: data.location,
+  date: data.date,
+  href: data.href,
+  operation: null, 
+  type: "Liberation" as const, 
+}));
+
+// Optimize images at build time
+const optimizedImages = await optimizeImages(lib);
+---
+
+<Layout title="Eyes On - Liberation">
+  <GallerySection title="LIBERATIONS" optimizedImages={optimizedImages} />
+</Layout>
+
+<style>
+  /* Add smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add custom styles for the gallery hover effects */
+  .aspect-w-3 {
+    position: relative;
+    padding-bottom: 66.666667%;
+  }
+
+  .aspect-h-2 {
+    position: relative;
+  }
+
+  .aspect-w-3 img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  /* Add hover effect for gallery items */
+  .group:hover img {
+    transform: scale(1.05);
+  }
+</style>
+

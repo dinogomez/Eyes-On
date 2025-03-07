@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="War Photography Gallery" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/eyeson.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-zinc-900">
+      <!-- NYT-style header -->
+
+      <header class="border-gray-200">
+        <div class="py-4 font-franklin flex justify-between">
+          <h5>
+            {
+              new Date().toLocaleDateString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }
+          </h5>
+
+          <a href="/about" class="hover:underline">About</a>
+        </div>
+        <div class="flex flex-col gap-0.5">
+          <hr />
+          <hr />
+        </div>
+        <h1
+          class="font-chomsky text-7xl md:text-8xl lg:text-9xl text-center tracking-tight"
+        >
+          <a href="/">Eyes On</a>
+        </h1>
+
+        <div class="flex flex-col text-center sm:flex-row justify-center mt-4 gap-x-4 text-xl">
+          <a
+            href="/operation"
+            class="font-franklin text-zinc-600 hover:underline">Operation</a
+          >
+          <a
+            href="/liberation"
+            class="font-franklin text-zinc-600 hover:underline">Liberation</a
+          >
+          <a
+            href="/hnm"
+            class="font-franklin text-zinc-600 hover:underline"
+            >Hearts and Minds</a
+          >
+        </div>
+        <div class="flex flex-col gap-0.5 py-4">
+          <hr />
+          <hr />
+        </div>
+      </header>
+      <slot />
+    </main>
+  </body>
+</html>

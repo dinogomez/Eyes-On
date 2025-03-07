@@ -1,0 +1,85 @@
+---
+interface Props {
+  title: string;
+  optimizedImages: {
+    href: string;
+    thumbnailSrc: string;
+    alt: string;
+    title: string;
+    date: string;
+    location: string;
+  }[];
+}
+
+const { title, optimizedImages } = Astro.props;
+---
+
+<section class="pb-16 pt-6">
+  {
+    optimizedImages.length > 0 ? (
+      <h1 class="font-cheltenham text-2xl font-bold text-center mb-8 uppercase">
+        {title}
+      </h1>
+    ) : (
+      <h1 class="font-cheltenham text-2xl font-bold text-center mb-8 uppercase text-zinc-600">
+        NO {title.toUpperCase()}
+      </h1>
+    )
+  }
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+      optimizedImages.map((article) => (
+        <a href={article.href}>
+          <div class="bg-white overflow-hidden">
+            <img
+              src={article.thumbnailSrc}
+              alt={article.alt}
+              class="w-full h-48 object-cover"
+            />
+            <div class="pt-2 pb-4 font-imperial">
+              <h2 class="text-2xl font-semibold mb-0.5">
+                {article.title}
+              </h2>
+              <p class="text-sm text-gray-500 mb-2">
+                {article.date} - {article.location}
+              </p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  /* Add smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Add custom styles for the gallery hover effects */
+  .aspect-w-3 {
+    position: relative;
+    padding-bottom: 66.666667%;
+  }
+
+  .aspect-h-2 {
+    position: relative;
+  }
+
+  .aspect-w-3 img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  /* Add hover effect for gallery items */
+  .group:hover img {
+    transform: scale(1.05);
+  }
+</style> 

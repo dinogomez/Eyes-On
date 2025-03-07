@@ -1,9 +1,40 @@
 ---
+import { SEO } from "astro-seo";
 import Kujari from "./liberation/2025/kujari.astro";
+
 ---
 
 <!-- Latest News -->
-<Kujari />
+<>
+	<SEO
+      title="Eyes On - War Photography"
+      description="This news gallery showcases a collection of images and videos highlighting the operations of the Philippine Joint Special Forces."
+      openGraph={{
+        basic: {
+          title: "Eyes On",
+          type: "Photography",
+          image: "/card.webp",
+        }
+      }}
+      twitter={{
+        creator: "@paulgomezz_"
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/eyeson.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content: "/card.webp",
+          },
+          { name: "twitter:title", content: "Eyes On - War Photography" },
+          { name: "twitter:description", content: "Photography of the Philippine Joint Special Forces" },
+        ],
+      }}
+    />
+	<Kujari />
+	</>
 
 <style>
   /* Add smooth scroll behavior */

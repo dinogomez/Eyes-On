@@ -24,7 +24,7 @@ export const images: Image[] = [
     location: "Kujari",
     operation: null,
     type: "Liberation",
-    date: "2024",
+    date: "2025",
     href: "",
   },
   {
@@ -37,7 +37,7 @@ export const images: Image[] = [
     location: "Kujari",
     operation: null,
     type: "Liberation",
-    date: "2024",
+    date: "2025",
     href: "",
   },
   {
@@ -50,7 +50,7 @@ export const images: Image[] = [
     location: "Kujari",
     operation: null,
     type: "Liberation",
-    date: "2024",
+    date: "2025",
     href: "",
   },
 ];

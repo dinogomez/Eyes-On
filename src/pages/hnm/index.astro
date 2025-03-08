@@ -16,6 +16,7 @@ const lib = hnmArticles.map((data: Article) => ({
   href: data.href || '#',
   operation: null,
   type: "Hearts and Minds" as const,
+  curator: data.curator,
 }));
 
 const optimizedImages = await optimizeImages(lib);

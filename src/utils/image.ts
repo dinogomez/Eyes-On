@@ -48,14 +48,11 @@ export async function getImage(imagePath: string): Promise<string> {
   // Clean up the image path
   const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
   
-  // Construct URL (relative in production, absolute in dev)
-  const imageUrl = IMAGE_DOMAIN ? `${IMAGE_DOMAIN}/${cleanPath}` : `/${cleanPath}`;
-
   try {
-    // Test if the image exists by making a HEAD request
+    // First try the direct URL approach
+    const imageUrl = IMAGE_DOMAIN ? `${IMAGE_DOMAIN}/${cleanPath}` : `/${cleanPath}`;
     const response = await fetch(imageUrl, { 
       method: 'HEAD',
-      // Add cache control headers
       headers: {
         'Cache-Control': 'public, max-age=31536000, immutable'
       }
@@ -64,19 +61,17 @@ export async function getImage(imagePath: string): Promise<string> {
     if (response.ok) {
       return imageUrl;
     }
+
+    // If direct URL fails, try the R2 Function endpoint
+    const r2Response = await fetch(`/image/${cleanPath}`);
+    if (r2Response.ok) {
+      return `/image/${cleanPath}`;
+    }
   } catch (error) {
-    console.warn(`Failed to fetch image from: ${imageUrl}`);
+    console.warn(`Failed to fetch image: ${imagePath}`);
   }
 
-  // Fallback to R2 bucket if direct URL fails
-  try {
-    const buffer = await getImageFromBucket(imagePath);
-    return bufferToBase64(buffer);
-  } catch (error: any) {
-    if (error.code === 'NoSuchKey') {
-      console.warn(`Image not found: ${imagePath}. Using local placeholder image.`);
-      return "/placeholder.png";
-    }
-    throw error;
-  }
+  // If all attempts fail, return placeholder
+  console.warn(`Image not found: ${imagePath}. Using local placeholder image.`);
+  return "/placeholder.png";
 }

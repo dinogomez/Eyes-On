@@ -13,7 +13,7 @@ export async function getImage(imagePath: string): Promise<string> {
   
   try {
     // First try the R2 Function endpoint (direct R2 bucket access)
-    const r2Url = `/image/${cleanPath}`;
+    const r2Url = `/r2-eyeson/${cleanPath}`;
     console.log('Trying R2 bucket access:', r2Url);
     
     try {

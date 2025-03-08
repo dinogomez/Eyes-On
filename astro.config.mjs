@@ -8,9 +8,11 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-
+  image: {
+    remotePatterns: [{ protocol: "https" }],
+  },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
   env: {
     schema: {
@@ -18,6 +20,7 @@ export default defineConfig({
       R2_URL: envField.string({ context: "client", access: "public", optional: true }),
       R2_ACCESS_KEY: envField.string({ context: "client", access: "public", optional: true }),
       R2_SECRET_KEY: envField.string({ context: "client", access: "public", optional: true }),
+      IMAGE_DOMAIN: envField.string({ context: "client", access: "public", optional: true }),
     }
   }
 });

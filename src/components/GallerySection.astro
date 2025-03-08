@@ -8,6 +8,7 @@ interface Props {
     title: string;
     date: string;
     location: string;
+    curator: string;
   }[];
 }
 
@@ -41,7 +42,7 @@ const { title, optimizedImages } = Astro.props;
                 {article.title}
               </h2>
               <p class="text-sm text-gray-500 mb-2">
-                {article.date} - {article.location}
+                {article.date} - {article.location} - {article.curator}
               </p>
             </div>
           </div>

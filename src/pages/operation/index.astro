@@ -5,6 +5,7 @@ import type { Article } from "../../data/article";
 import Layout from "../../layouts/Layout.astro";
 import { optimizeImages } from "../../utils/imageOptimizer";
 
+// First map the articles to the intermediate format needed for optimization
 const lib = operationArticles.map((data: Article) => ({
   id: data.id,
   src: data.thumbnail_src,
@@ -14,16 +15,28 @@ const lib = operationArticles.map((data: Article) => ({
   location: data.location,
   date: data.date,
   href: data.href,
-  operation: null, // Ensure operation is set to null
-  type: "Operation" as const, // Ensure type is set as a string literal 'Liberation'
+  operation: null,
+  type: "Operation" as const,
+  curator: data.curator,
 }));
 
 // Optimize images at build time
 const optimizedImages = await optimizeImages(lib);
+
+// Map the optimized images to match GallerySection's expected format
+const galleryImages = optimizedImages.map((img) => ({
+  href: img.href,
+  thumbnailSrc: img.thumbnailSrc,
+  alt: img.alt,
+  title: img.title,
+  date: img.date,
+  location: img.location,
+  curator: img.curator,
+}));
 ---
 
 <Layout title="Eyes On - Operations">
-  <GallerySection title="OPERATIONS" optimizedImages={optimizedImages} />
+  <GallerySection title="OPERATIONS" optimizedImages={galleryImages} />
 </Layout>
 
 <style>

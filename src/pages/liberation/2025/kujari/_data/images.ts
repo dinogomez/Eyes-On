@@ -1,9 +1,12 @@
-import type { Image } from "../../image";
+import { liberation } from '../../../../../data/2025/lib/src';
+import type { Image } from "../../../../../data/image";
+
+
 
 export const images: Image[] = [
   {
     id: 1,
-    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_extraction.png",
+    src: liberation.src.kujari.smoke,
     alt: "Hasty Retreat",
     title: "Hard Extract",
     description:
@@ -12,11 +15,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2024",
-    href: "",
   },
   {
     id: 2,
-    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_extraction_1.png",
+    src: liberation.src.kujari.extraction_1,
     alt: "Hasty Retreat 2",
     title: "Run for the Hills",
     description:
@@ -25,11 +27,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   {
     id: 3,
-    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_smoke.png",
+    src: liberation.src.kujari.smoke,
     alt: "Green Smoke",
     title: "Green Fog",
     description:
@@ -38,11 +39,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   {
     id: 4,
-    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_smoke_1.png",
+    src: liberation.src.kujari.smoke_1,
     alt: "Make A Run For It",
     title: "Make A Run For It",
     description: "Unamed Dagger Operator, making a run for it.",
@@ -50,11 +50,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   {
     id: 5,
-    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_dismount.png",
+    src: liberation.src.kujari.dismount,
     alt: "Dismount",
     title: "Dismount and Relocate",
     description:
@@ -63,11 +62,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   { 
     id: 6,
-    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_los.png",
+    src: liberation.src.kujari.los,
     alt: "Line of Sight",
     title: "Line of Sight",
     description: "Dagger Operators maintains line of sight on the objective.",
@@ -75,11 +73,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   {
     id: 7,
-    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_mounted.png",
+    src: liberation.src.kujari.mounted,
     alt: "Mounted and Ready",
     title: "Mounted and Ready",
     description: "M249 Machine Gun mounted and ready to engage.",
@@ -87,11 +84,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   {
     id: 8,
-    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_bb_press.png",
+    src: liberation.src.kujari.bb_press,
     alt: "Silent Passengers",
     title: " Silent Passengers",
     description:
@@ -100,6 +96,5 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
 ];

@@ -1,9 +1,10 @@
 import type { Image } from "../../image";
+import { about } from "./src";
 
 export const images: Image[] = [
   {
     id: 1,
-    src: "/images/about/about_1.webp",
+    src: about.src.about.about_1,
     alt: "Life or Death",
     title: "Life or Death",
     description:
@@ -12,11 +13,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   {
     id: 2,
-    src: "/images/about/about_2.webp",
+    src: about.src.about.about_2,
     alt: "Stalker",
     title: "Stalker",
     description:
@@ -25,11 +25,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   {
     id: 3,
-    src: "/images/about/about_3.webp",
+    src: about.src.about.about_3,
     alt: "Night Light",
     title: "Night Light",
     description:
@@ -38,11 +37,10 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
   {
     id: 4,
-    src: "/images/about/about_4.webp",
+    src: about.src.about.about_4,
     alt: "Contact Front",
     title: "Contact Front",
     description:
@@ -51,6 +49,5 @@ export const images: Image[] = [
     operation: null,
     type: "Liberation",
     date: "2025",
-    href: "",
   },
 ];

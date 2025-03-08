@@ -1,11 +1,28 @@
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const ImageViewer = ({ images, initialIndex, onClose }) => {
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+// Define types for the image and props
+type Image = {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+  type: string;
+  location: string;
+  date: string;
+};
+
+type ImageViewerProps = {
+  images: Image[];
+  initialIndex: number;
+  onClose: () => void;
+};
+
+const ImageViewer = ({ images, initialIndex, onClose }: ImageViewerProps) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(initialIndex);
 
   useEffect(() => {
-    const handleKeyPress = (e) => {
+    const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
       if (e.key === 'ArrowLeft') handlePrevious();
       if (e.key === 'ArrowRight') handleNext();

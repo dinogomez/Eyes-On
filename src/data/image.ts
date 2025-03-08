@@ -8,5 +8,4 @@ export interface Image {
     operation: string | null;
     type: "Liberation" | "Hearts and Minds" | "Operation";
     date: string;
-    href: string;
 }

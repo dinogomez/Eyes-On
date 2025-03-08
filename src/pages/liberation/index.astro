@@ -15,7 +15,8 @@ const lib = liberationArticles.map((data: Article) => ({
   date: data.date,
   href: data.href,
   operation: null, 
-  type: "Liberation" as const, 
+  type: "Liberation" as const,
+  curator: data.curator,
 }));
 
 // Optimize images at build time

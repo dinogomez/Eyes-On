@@ -1,8 +1,8 @@
 ---
-import { Gallery } from "../../../components/Gallery";
-import { images } from "../../../data/2025/lib/images";
-import Layout from "../../../layouts/Layout.astro";
-import { optimizeImages } from "../../../utils/imageOptimizer";
+import { Gallery } from "../../../../components/Gallery";
+import Layout from "../../../../layouts/Layout.astro";
+import { optimizeImages } from "../../../../utils/imageOptimizer";
+import { images } from "../../../liberation/2025/kujari/_data/images";
 // Optimize images at build time
 const optimizedImages = await optimizeImages(images);
 ---
@@ -10,7 +10,7 @@ const optimizedImages = await optimizeImages(images);
     <!-- Gallery Section -->
     <section class="pb-16 pt-6">
       <h2 class="font-cheltenham text-4xl font-bold mb-4 text-center uppercase">
-        Godfather Company deploys to Kujari
+        Operation Red Dune
       </h2>
       <p
         class="font-imperial text-lg text-gray-600 mx-auto mb-12 text-justify"

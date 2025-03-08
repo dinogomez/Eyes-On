@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 
+import { ClientRouter } from 'astro:transitions';
 import "../styles/global.css";
 ---
 
@@ -44,6 +45,7 @@ import "../styles/global.css";
     <title>{title}</title>
   </head>
   <body>
+    <ClientRouter />
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-zinc-900">
       <!-- NYT-style header -->
 

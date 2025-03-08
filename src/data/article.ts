@@ -7,4 +7,5 @@ export interface Article {
   location: string;
   date: string;
   href: string;
+  curator: string;
 }

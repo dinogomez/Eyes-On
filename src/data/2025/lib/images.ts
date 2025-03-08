@@ -3,7 +3,7 @@ import type { Image } from "../../image";
 export const images: Image[] = [
   {
     id: 1,
-    src: "/images/war-photography/2025_0307_lib_kujuwari_extraction.png",
+    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_extraction.png",
     alt: "Hasty Retreat",
     title: "Hard Extract",
     description:
@@ -16,7 +16,7 @@ export const images: Image[] = [
   },
   {
     id: 2,
-    src: "/images/war-photography/2025_0307_lib_kujuwari_extraction_1.png",
+    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_extraction_1.png",
     alt: "Hasty Retreat 2",
     title: "Run for the Hills",
     description:
@@ -29,7 +29,7 @@ export const images: Image[] = [
   },
   {
     id: 3,
-    src: "/images/war-photography/2025_0307_lib_kujuwari_smoke.png",
+    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_smoke.png",
     alt: "Green Smoke",
     title: "Green Fog",
     description:
@@ -42,7 +42,7 @@ export const images: Image[] = [
   },
   {
     id: 4,
-    src: "/images/war-photography/2025_0307_lib_kujuwari_smoke_1.png",
+    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_smoke_1.png",
     alt: "Make A Run For It",
     title: "Make A Run For It",
     description: "Unamed Dagger Operator, making a run for it.",
@@ -54,7 +54,7 @@ export const images: Image[] = [
   },
   {
     id: 5,
-    src: "/images/war-photography/2025_0307_lib_kujuwari_dismount.png",
+    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_dismount.png",
     alt: "Dismount",
     title: "Dismount and Relocate",
     description:
@@ -65,9 +65,9 @@ export const images: Image[] = [
     date: "2025",
     href: "",
   },
-  {
+  { 
     id: 6,
-    src: "/images/war-photography/2025_0307_lib_kujuwari_los.png",
+    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_los.png",
     alt: "Line of Sight",
     title: "Line of Sight",
     description: "Dagger Operators maintains line of sight on the objective.",
@@ -79,7 +79,7 @@ export const images: Image[] = [
   },
   {
     id: 7,
-    src: "/images/war-photography/2025_0307_lib_kujuwari_mounted.png",
+    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_mounted.png",
     alt: "Mounted and Ready",
     title: "Mounted and Ready",
     description: "M249 Machine Gun mounted and ready to engage.",
@@ -91,7 +91,7 @@ export const images: Image[] = [
   },
   {
     id: 8,
-    src: "/images/war-photography/2025_0307_lib_kujuwari_bb_press.png",
+    src: "/r2-eyeson/2025/liberation/kujari/2025_0307_lib_kujuwari_bb_press.png",
     alt: "Silent Passengers",
     title: " Silent Passengers",
     description:

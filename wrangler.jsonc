@@ -1,0 +1,8 @@
+{
+    "r2_buckets": [
+      {
+        "binding": "r2-eyeson",
+        "bucket_name": "eyeson"
+      }
+    ]
+  }

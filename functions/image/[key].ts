@@ -1,7 +1,7 @@
 import type { R2Bucket } from '@cloudflare/workers-types';
 
 interface Env {
-  BUCKET: R2Bucket;
+  "r2-eyeson": R2Bucket;
 }
 
 export async function onRequest(context: { env: Env; params: { key: string | string[] } }) {
@@ -11,7 +11,7 @@ export async function onRequest(context: { env: Env; params: { key: string | str
       return new Response("Key is required", { status: 400 });
     }
 
-    const obj = await context.env.BUCKET.get(key);
+    const obj = await context.env["r2-eyeson"].get(key);
     if (obj === null) {
       return new Response("Not found", { status: 404 });
     }

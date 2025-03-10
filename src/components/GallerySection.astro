@@ -15,14 +15,14 @@ interface Props {
 const { title, optimizedImages } = Astro.props;
 ---
 
-<section class="pb-16 pt-6">
+<section class="pb-16">
   {
     optimizedImages.length > 0 ? (
-      <h1 class="font-cheltenham text-2xl font-bold text-center mb-8 uppercase">
+      <h1 class="font-cheltenham text-3xl font-bold bg-red-700 uppercase text-white text-center mb-8 tracking-tight">
         {title}
       </h1>
     ) : (
-      <h1 class="font-cheltenham text-2xl font-bold text-center mb-8 uppercase text-zinc-600">
+      <h1 class="font-cheltenham text-3xl font-bold text-center mb-8 uppercase text-zinc-600">
         NO {title.toUpperCase()}
       </h1>
     )

@@ -1,12 +1,10 @@
-import { liberation } from '../../../../../data/2025/lib/src';
-import type { Image } from "../../../../../data/image";
-
-
+import type { Image } from '../../image';
+import { liberation } from './src';
 
 export const images: Image[] = [
   {
     id: 1,
-    src: liberation.src.kujari.smoke,
+    src: liberation.src.kujari.extraction,
     alt: "Hasty Retreat",
     title: "Hard Extract",
     description:

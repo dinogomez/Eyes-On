@@ -8,4 +8,5 @@ export interface Article {
   date: string;
   href: string;
   curator: string;
+  type: "Operation" | "Liberation" | "Hearts and Minds";
 }

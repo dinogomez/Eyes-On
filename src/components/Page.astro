@@ -1,0 +1,21 @@
+---
+import { Info } from "lucide-react";
+import Layout from "../layouts/Layout.astro";
+import { Gallery } from "./Gallery.tsx";
+const { title, description, images, curator} = Astro.props;
+---
+
+<Layout title={"Eyes On - " + title}>
+  <section class="pb-16">
+    <h2 class="font-cheltenham text-4xl font-bold mb-4 py-6 text-center uppercase bg-black text-white">
+      {title}
+      <br>
+      <span class=" text-xs text-gray-600 flex justify-center">{curator}</span>
+    </h2>
+    <p class="font-imperial text-base text-gray-600 mx-autotext-justify">
+      {description}
+    </p>
+     <p class="w-full justify-end font-imperial text-xs text-gray-400 mx-auto mb-3 mt-4 text-justify flex items-center"><Info className="inline-block mr-2 h-4 w-4 stroke-2" />hover and click the images</p> 
+    <Gallery client:load images={images} />
+  </section>
+</Layout> 

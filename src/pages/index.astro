@@ -1,42 +1,44 @@
 ---
 import { SEO } from "astro-seo";
-import { Image } from "astro:assets";
 import Kujari from "./liberation/2025/kujari/index.astro";
-
 ---
 
 <!-- Latest News -->
 <>
-	<SEO
-      title="Eyes On - War Photography"
-      description="This news gallery showcases a collection of images and videos highlighting the operations of the Philippine Joint Special Forces."
-      openGraph={{
-        basic: {
-          title: "Eyes On",
-          type: "Photography",
-          image: "https://raw.githubusercontent.com/dinogomez/Eyes-On/refs/heads/main/public/card.webp",
-        }
-      }}
-      twitter={{
-        creator: "@paulgomezz_"
-      }}
-      extend={{
-        // extending the default link tags
-        link: [{ rel: "icon", href: "/eyeson.ico" }],
-        // extending the default meta tags
-        meta: [
-          {
-            name: "twitter:image",
-            content: "https://raw.githubusercontent.com/dinogomez/Eyes-On/refs/heads/main/public/card.webp",
-          },
-          { name: "twitter:title", content: "Eyes On - War Photography" },
-          { name: "twitter:description", content: "Photography of the Philippine Joint Special Forces" },
-        ],
-      }}
-    />
-    <Image width={100} height={100} src="/image/2025/liberation/kujari/2025_0307_lib_kujuwari_extraction.webp" alt="Kujari" />
-	<Kujari />
-	</>
+  <SEO
+    title="Eyes On - War Photography"
+    description="This news gallery showcases a collection of images and videos highlighting the operations of the Philippine Joint Special Forces."
+    openGraph={{
+      basic: {
+        title: "Eyes On",
+        type: "Photography",
+        image:
+          "https://raw.githubusercontent.com/dinogomez/Eyes-On/refs/heads/main/public/card.webp",
+      },
+    }}
+    twitter={{
+      creator: "@paulgomezz_",
+    }}
+    extend={{
+      // extending the default link tags
+      link: [{ rel: "icon", href: "/eyeson.ico" }],
+      // extending the default meta tags
+      meta: [
+        {
+          name: "twitter:image",
+          content:
+            "https://raw.githubusercontent.com/dinogomez/Eyes-On/refs/heads/main/public/card.webp",
+        },
+        { name: "twitter:title", content: "Eyes On - War Photography" },
+        {
+          name: "twitter:description",
+          content: "Photography of the Philippine Joint Special Forces",
+        },
+      ],
+    }}
+  />
+  <Kujari />
+</>
 
 <style>
   /* Add smooth scroll behavior */

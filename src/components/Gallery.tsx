@@ -29,7 +29,7 @@ export const Gallery = ({ images }: GalleryProps) => {
         {currentImages.map((image, index) => (
           <div 
             key={image.id}
-            className="aspect-w-16 aspect-h-9 relative group overflow-hidden cursor-pointer shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
+            className="aspect-w-3 aspect-h-2 relative group overflow-hidden cursor-pointer shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
             onClick={() => setSelectedImage(startIndex + index)}
           >
             <img 

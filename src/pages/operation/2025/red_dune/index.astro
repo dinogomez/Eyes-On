@@ -1,32 +1,27 @@
 ---
-import { Gallery } from "../../../../components/Gallery";
-import Layout from "../../../../layouts/Layout.astro";
+import Page from "../../../../components/Page.astro";
+import { images } from "../../../../data/2025/operations/red_dune";
+import getEvent from "../../../../utils/getEvent";
 import { optimizeImages } from "../../../../utils/imageOptimizer";
-import { images } from "../../../liberation/2025/kujari/_data/images";
-// Optimize images at build time
-const optimizedImages = await optimizeImages(images);
+// Optimize images using the utility
+const galleryImages = await optimizeImages(images);
+const operation = getEvent("Operation Red Dune", "Operation");
 ---
-<Layout title="Eyes On - Kujari Liberation">
-    <!-- Gallery Section -->
-    <section class="pb-16 pt-6">
-      <h2 class="font-cheltenham text-4xl font-bold mb-4 text-center uppercase">
-        Operation Red Dune
-      </h2>
-      <p
-        class="font-imperial text-lg text-gray-600 mx-auto mb-12 text-justify"
-      >
-      The PJSF has recently deployed troops to Kujari, a conflict zone near the eastern borders of the Middle Kingdom, where ongoing fighting has led to the exploitation of resources by hostile forces. Their mission aims to counteract growing Chinese influence in the region, which has become a battle for control over critical resources and strategic territory. By securing key locations and supporting local allies, the PJSF seeks to protect the local population, prevent the consolidation of hostile power, and reestablish stability to ensure the region does not fall further under foreign control.
-      </p>
 
-      <Gallery client:load images={optimizedImages} />
-    </section>
-</Layout>
+<Page 
+  title={operation?.title} 
+  description={operation?.description} 
+  images={galleryImages} 
+  curator={operation?.curator}
+/>
 
 <style>
   /* Add smooth scroll behavior */
   html {
     scroll-behavior: smooth;
   }
+
+
 
   /* Add custom styles for the gallery hover effects */
   .aspect-w-3 {

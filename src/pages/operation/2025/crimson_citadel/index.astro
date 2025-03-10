@@ -1,19 +1,18 @@
 ---
 import Page from "../../../../components/Page.astro";
-import { images } from "../../../../data/2025/lib/kujari";
+import { images } from "../../../../data/2025/operations/crimson_citadel";
 import getEvent from "../../../../utils/getEvent";
 import { optimizeImages } from "../../../../utils/imageOptimizer";
 // Optimize images using the utility
 const galleryImages = await optimizeImages(images);
-const liberation = getEvent("Kujari Liberation", "Liberation");
+const operation = getEvent("Operation Crimson Citadel", "Operation");
 ---
 
-
 <Page 
-  title={liberation?.title} 
-  description={liberation?.description} 
+  title={operation?.title} 
+  description={operation?.description} 
   images={galleryImages} 
-  curator={liberation?.curator}
+  curator={operation?.curator}
 />
 
 <style>
@@ -21,6 +20,8 @@ const liberation = getEvent("Kujari Liberation", "Liberation");
   html {
     scroll-behavior: smooth;
   }
+
+
 
   /* Add custom styles for the gallery hover effects */
   .aspect-w-3 {

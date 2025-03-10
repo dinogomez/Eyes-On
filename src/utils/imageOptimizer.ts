@@ -1,35 +1,38 @@
-import { getImage } from 'astro:assets';
-import type { Image } from '../data/image';
+import { media } from './media';
 
 // Base type for required image fields
-type BaseImage = Pick<Image, 'id' | 'src' | 'alt' | 'title' | 'description' | 'location' | 'operation' | 'type' | 'date'>;
+type BaseImage = {
+  id: number;
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+};
 
 // Generic type that extends BaseImage to allow additional fields
-export async function optimizeImage<T extends BaseImage>(image: T) {
-  const optimized = await getImage({
-    src: image.src,
-    width: 1920,
-    height: 1080,
-    format: 'webp',
-    quality: 'max'
+export async function optimize<T extends BaseImage>(image: T) {
+  // Optimize and cache full-size image
+  const optimizedSrc = await media(image.src, {
+    width: 3440,
+    height: 1440,
+    format: 'webp'
   });
 
-  // Also generate thumbnail for gallery view
-  const thumbnail = await getImage({
-    src: image.src,
-    width: 1920,
-    height: 1080,
-    format: 'webp',
+  // Generate and cache thumbnail
+  const thumbnailSrc = await media(image.src, {
+    width: 800,
+    height: 800,
+    format: 'webp'
   });
 
   return {
     ...image,
-    src: optimized.src,
-    thumbnailSrc: thumbnail.src,
+    src: optimizedSrc,
+    thumbnailSrc: thumbnailSrc,
     optimized: true
   };
 }
 
 export async function optimizeImages<T extends BaseImage>(images: T[]) {
-  return Promise.all(images.map(optimizeImage));
+  return Promise.all(images.map(image => optimize(image)));
 } 

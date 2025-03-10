@@ -5,14 +5,16 @@ import { images } from "../../data/2025/about/about";
 import { about } from '../../data/2025/about/src';
 import Layout from "../../layouts/Layout.astro";
 import { optimizeImages } from "../../utils/imageOptimizer";
+import { media } from '../../utils/media';
 
 const optimizedImages = await optimizeImages(images);
+const profile = await media(about.src.about.profile);
 ---
 <Layout title="Eyes On - About">
     <section class="pb-16 pt-6 flex">
       <div class="">
        
-        <Image src={about.src.about.profile} width={150} height={150} alt="About Image" class="mr-4 float-left rounded-md" />
+        <Image src={profile} width={150} height={150} alt="About Image" class="mr-4 float-left shadow-lg rounded-lg" />
         <h2 class="font-cheltenham text-3xl text-zinc-900 font-bold mb-1  uppercase">
           About
         </h2>

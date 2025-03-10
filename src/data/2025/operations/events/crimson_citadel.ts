@@ -17,9 +17,9 @@ export const images: Image[] = [
   {
     id: 2,
     src: operations.src.crimson_citadel.pilots,
-    alt: "Venoms",
-    title: "Venoms",
-    description: "Pilots posing in front of they Huey transport.",
+    alt: "ACE",
+    title: "ACE",
+    description: "Pilots posing in front of their Huey transport.",
     location: "Colombia",
     operation: "Crimson Citadel",
     type: "Operation",

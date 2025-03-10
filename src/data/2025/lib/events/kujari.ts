@@ -1,0 +1,98 @@
+import type { Image } from '../../../image';
+import { liberation } from '../src';
+
+export const images: Image[] = [
+  {
+    id: 1,
+    src: liberation.src.kujari.extraction,
+    alt: "Hasty Retreat",
+    title: "Hard Extract",
+    description:
+      "Dagger-1 retreats from the forest, dust and smoke trailing behind them as they race toward extraction,every step is a race against time.",
+    location: "Kujari",
+    operation: null,
+    type: "Liberation",
+    date: "2024",
+  },
+  {
+    id: 2,
+    src: liberation.src.kujari.extraction_1,
+    alt: "Hasty Retreat 2",
+    title: "Run for the Hills",
+    description:
+      "Dagger-1 runs for the hills, the enemy is closing in, Blackbird echoes across the valley.",
+    location: "Kujari",
+    operation: null,
+    type: "Liberation",
+    date: "2025",
+  },
+  {
+    id: 3,
+    src: liberation.src.kujari.smoke,
+    alt: "Green Smoke",
+    title: "Green Fog",
+    description:
+      "Disoriented and taking fire, Dagger-1 runs through the smoke to safety.",
+    location: "Kujari",
+    operation: null,
+    type: "Liberation",
+    date: "2025",
+  },
+  {
+    id: 4,
+    src: liberation.src.kujari.smoke_1,
+    alt: "Make A Run For It",
+    title: "Make A Run For It",
+    description: "Unamed Dagger Operator, making a run for it.",
+    location: "Kujari",
+    operation: null,
+    type: "Liberation",
+    date: "2025",
+  },
+  {
+    id: 5,
+    src: liberation.src.kujari.dismount,
+    alt: "Dismount",
+    title: "Dismount and Relocate",
+    description:
+      "Dagger MG Operator dismounts and relocates while the AB takes security.",
+    location: "Kujari",
+    operation: null,
+    type: "Liberation",
+    date: "2025",
+  },
+  { 
+    id: 6,
+    src: liberation.src.kujari.los,
+    alt: "Line of Sight",
+    title: "Line of Sight",
+    description: "Dagger Operators maintains line of sight on the objective.",
+    location: "Kujari",
+    operation: null,
+    type: "Liberation",
+    date: "2025",
+  },
+  {
+    id: 7,
+    src: liberation.src.kujari.mounted,
+    alt: "Mounted and Ready",
+    title: "Mounted and Ready",
+    description: "M249 Machine Gun mounted and ready to engage.",
+    location: "Kujari",
+    operation: null,
+    type: "Liberation",
+    date: "2025",
+  },
+  {
+    id: 8,
+    src: liberation.src.kujari.bb_press,
+    alt: "Silent Passengers",
+    title: " Silent Passengers",
+    description:
+      "Exhausted but alive, the soldiers sit in silence as the helicopter lifts them away from the battlefield. Behind them, a war correspondent watches, capturing stories that words alone cannot tell.",
+    location: "Kujari",
+    operation: null,
+    type: "Liberation",
+    date: "2025",
+  },
+];
